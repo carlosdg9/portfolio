@@ -1,8 +1,22 @@
+import NavBar from './components/NavBar'
+import BackgroundGlow from './components/BackgroundGlow'
+import Hero from './sections/Hero'
+import About from './sections/About'
+import Projects from './sections/Projects'
+import Contact from './sections/Contact'
+
 function App() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-neutral-950 text-neutral-100">
-      <h1 className="text-3xl font-medium">Portfolio en construccion</h1>
-    </main>
+    <div className="min-h-screen">
+      <BackgroundGlow />
+      <NavBar />
+      <main>
+        <Hero />
+        <About />
+        <Projects />
+        <Contact />
+      </main>
+    </div>
   )
 }
 

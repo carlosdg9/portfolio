@@ -1,5 +1,28 @@
 @import "tailwindcss";
 
+@theme {
+  --color-accent: #a855f7;
+  --color-accent-foreground: #f5f3ff;
+  --color-surface: #0a0a0f;
+  --color-surface-raised: #13131a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
+  background-color: var(--color-surface);
+  color: #e5e5ea;
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl;
+  }
+
+  .glass-nav {
+    @apply border-b border-white/10 bg-black/30 backdrop-blur-2xl;
+  }
 }
