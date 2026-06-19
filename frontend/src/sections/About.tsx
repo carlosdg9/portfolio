@@ -8,7 +8,11 @@ function About() {
         <GlassPanel className="px-8 py-10">
           <h2 className="text-2xl font-semibold text-white">Sobre mi</h2>
           <p className="mt-4 text-neutral-300">
-            Contenido pendiente de redactar en la Fase 3 del proyecto.
+            Desarrollador de software en formacion, construyendo productos reales y
+            comercializables (como VeriFactu, un sistema de facturacion electronica)
+            mientras profundiza en infraestructura: Docker, despliegue en servidores
+            propios y arquitecturas backend completas. Le interesa entender el ciclo
+            completo de un producto, desde el codigo hasta como llega a produccion.
           </p>
         </GlassPanel>
       </RevealOnScroll>
