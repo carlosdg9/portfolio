@@ -9,7 +9,7 @@ function Hero() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
       >
-        <h1 className="text-fg text-4xl font-semibold sm:text-5xl">Carlos Diaz</h1>
+        <h1 className="text-fg text-4xl font-semibold sm:text-5xl">Carlos Díaz</h1>
         <p className="text-fg-muted mt-4 text-lg">
           Desarrollador de software construyendo productos reales.
         </p>
