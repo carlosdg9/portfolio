@@ -3,8 +3,28 @@
 @theme {
   --color-accent: #a855f7;
   --color-accent-foreground: #f5f3ff;
+}
+
+:root {
+  --color-surface: #f6f5fa;
+  --color-surface-raised: #ffffff;
+  --color-fg: #18181b;
+  --color-fg-muted: #52525b;
+  --color-glass-bg: rgba(10, 10, 15, 0.04);
+  --color-glass-border: rgba(10, 10, 15, 0.1);
+  --color-nav-bg: rgba(255, 255, 255, 0.6);
+  --blob-opacity: 0.28;
+}
+
+.dark {
   --color-surface: #0a0a0f;
   --color-surface-raised: #13131a;
+  --color-fg: #e5e5ea;
+  --color-fg-muted: #a1a1aa;
+  --color-glass-bg: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-nav-bg: rgba(0, 0, 0, 0.3);
+  --blob-opacity: 0.55;
 }
 
 html {
@@ -14,15 +34,85 @@ html {
 body {
   margin: 0;
   background-color: var(--color-surface);
-  color: #e5e5ea;
+  color: var(--color-fg);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 @layer components {
   .glass-panel {
-    @apply rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl;
+    border-radius: 1.5rem;
+    border: 1px solid var(--color-glass-border);
+    background-color: var(--color-glass-bg);
+    backdrop-filter: blur(24px);
   }
 
   .glass-nav {
-    @apply border-b border-white/10 bg-black/30 backdrop-blur-2xl;
+    border-bottom: 1px solid var(--color-glass-border);
+    background-color: var(--color-nav-bg);
+    backdrop-filter: blur(40px);
+  }
+
+  .text-fg {
+    color: var(--color-fg);
+  }
+
+  .text-fg-muted {
+    color: var(--color-fg-muted);
+  }
+}
+
+.mesh-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: var(--blob-opacity);
+  will-change: transform;
+}
+
+.mesh-blob-1 {
+  top: -12%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: var(--color-accent);
+  animation: drift-1 26s ease-in-out infinite;
+}
+
+.mesh-blob-2 {
+  bottom: -15%;
+  right: -10%;
+  width: 45vw;
+  height: 45vw;
+  background: #38bdf8;
+  animation: drift-2 30s ease-in-out infinite;
+}
+
+.mesh-blob-3 {
+  top: 30%;
+  right: 18%;
+  width: 34vw;
+  height: 34vw;
+  background: #f472b6;
+  animation: drift-3 34s ease-in-out infinite;
+}
+
+@keyframes drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(8vw, 6vh) scale(1.1); }
+}
+
+@keyframes drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-6vw, -8vh) scale(1.05); }
+}
+
+@keyframes drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-5vw, 5vh) scale(0.95); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mesh-blob {
+    animation: none !important;
   }
 }

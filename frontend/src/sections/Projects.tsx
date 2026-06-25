@@ -12,13 +12,13 @@ function Projects() {
   return (
     <section id="proyectos" className="mx-auto max-w-5xl px-6 py-24">
       <RevealOnScroll>
-        <h2 className="text-2xl font-semibold text-white">Proyectos</h2>
+        <h2 className="text-fg text-2xl font-semibold">Proyectos</h2>
       </RevealOnScroll>
 
-      {isLoading && <p className="mt-8 text-neutral-400">Cargando proyectos...</p>}
-      {isError && <p className="mt-8 text-neutral-400">No se pudieron cargar los proyectos.</p>}
+      {isLoading && <p className="text-fg-muted mt-8">Cargando proyectos...</p>}
+      {isError && <p className="text-fg-muted mt-8">No se pudieron cargar los proyectos.</p>}
       {projects && projects.length === 0 && (
-        <p className="mt-8 text-neutral-400">Proyectos pendientes de publicar.</p>
+        <p className="text-fg-muted mt-8">Proyectos pendientes de publicar.</p>
       )}
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -29,8 +29,8 @@ function Projects() {
               whileHover={{ y: -6, borderColor: 'rgba(168, 85, 247, 0.5)' }}
               transition={{ duration: 0.2 }}
             >
-              <h3 className="text-lg font-medium text-white">{project.title}</h3>
-              <p className="mt-2 text-sm text-neutral-400">{project.stack.join(', ')}</p>
+              <h3 className="text-fg text-lg font-medium">{project.title}</h3>
+              <p className="text-fg-muted mt-2 text-sm">{project.stack.join(', ')}</p>
             </motion.div>
           </RevealOnScroll>
         ))}
